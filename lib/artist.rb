@@ -37,30 +37,7 @@ class Artist
   end 
   
   def print_songs
-<<<<<<< HEAD
     puts @songs.collect{|x| x.name}
   end 
   
 end 
-=======
-    @songs.collect{|x| x.name}
-    binding.pry
-  end 
-  
-end 
-
-describe 'Artist' do
-  let(:artist) {Artist.new('Michael Jackson')}
-
-  describe '#print_songs' do
-    it 'lists all of the artist\'s songs' do
-      dirty_diana = Song.new("Dirty Diana")
-      billie_jean = Song.new("Billie Jean")
-      artist.add_song(dirty_diana)
-      artist.add_song(billie_jean)
-      binding.pry
-      expect{artist.print_songs}.to output("Dirty Diana\nBillie Jean\n").to_stdout
-    end
-  end
-end
->>>>>>> 620976468c47f3882685c93cb78ff74788d20ea9
