@@ -12,7 +12,7 @@ class MP3Importer
   end
 
   def files
-    @@filepathDirectory
+    @files = Dir.glob(".spec/fixtures/mp3s")
   end
 
   def import(filename)
