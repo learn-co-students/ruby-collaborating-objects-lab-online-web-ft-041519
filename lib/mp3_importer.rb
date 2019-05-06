@@ -2,17 +2,14 @@ require "pry"
 
 class MP3Importer
 
-  @@filepathDirectory = []
+  attr_accessor :path,
 
-  attr_accessor :filepath,
-
-  def initialize(filepath)
-    @filepath = filepath
-    @@filepathDirectory << filepath
+  def initialize(path)
+    @path = path
   end
 
   def files
-    @files = Dir.glob(".spec/fixtures/mp3s/*.mp3")
+    @files = Dir.glob("#{@path}/*.mp3")
   end
 
   def import(filename)
