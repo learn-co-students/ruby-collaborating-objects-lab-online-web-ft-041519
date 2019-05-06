@@ -8,9 +8,12 @@ class Song
     @name = name
   end
 
-  def new_by_filename(filename)
-    song = Song.new
-    puts "filename: #{filename}"
+  def self.new_by_filename(filename)
+    name_arr = filename.split(" - ")
+    song = Song.new(name_arr[1])
+    song.artist = Artist.find_or_create_by_name(name_arr[0])
+    song.artist.add_song(song)
+    song
   end
 
 end
